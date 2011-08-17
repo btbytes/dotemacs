@@ -17,24 +17,6 @@
 ;; XXX: fix highlight colour before using this.
 ;;(highline-mode-on)
 
-;;Comment or Uncomment C-c #
-(global-set-key "\C-c#"  'comment-or-uncomment-region)
-
-
-;; Make
-;; (global-set-key "C-c 9" 'compile)
-
-;; magit
-;; magit-status C-c ms
-(global-set-key (kbd "C-c ms") 'magit-status)
-
-;; This hook is activated only when the magit-mode is active.
-;; See http://xahlee.org/emacs/keyboard_shortcuts.html
-(add-hook 'magit-mode-hook
-          (lambda ()
-            (define-key magit-mode-map (kbd "C-c sa") 'magit-stage-all)
-            )
-          )
 
 ;; Line truncation. See http://bit.ly/bzFM05
 ;;(setq truncate-lines t)
@@ -43,8 +25,19 @@
 (require 'color-theme)
 ;;(color-theme-zenburn)
 ;;(require 'color-theme)
-(require 'color-theme-solarized)
-(color-theme-solarized-light)
+;;(require 'color-theme-solarized)
+;;(color-theme-solarized-light)
+
+;; lua-mode. see lua-mode.el
+(load (concat dotfiles-dir "lua-mode.el"))
+(setq auto-mode-alist (cons'("\\.lua$" . lua-mode) auto-mode-alist))
+(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+(add-hook 'lua-mode-hook 'turn-on-font-lock)
+(add-hook 'lua-mode-hook 'hs-minor-mode)
+
+;; org-mode. see custorg.el
+(setq custom-file (concat dotfiles-dir "custorg.el"))
+(load custom-file 'noerror)
 
 ;; whitespace mode.
 (require 'whitespace)
@@ -53,11 +46,6 @@
 (autoload 'global-whitespace-toggle-options
   "whitespace" "Toggle global `whitespace-mode' options." t)
 
-(global-set-key "\C-c_w" 'whitespace-mode)
-(global-set-key "\C-c_t" 'whitespace-toggle-options)
-(global-set-key "\C-c=w" 'global-whitespace-mode)
-(global-set-key "\C-c=t" 'global-whitespace-toggle-options)
-(global-set-key "\C-cwc" 'whitespace-cleanup)
 
 ;; custom whitespace setup.
 (setq whitespace-style '(trailing
@@ -80,7 +68,13 @@
  )
 
 
-;; org-mode. see custorg.el
-(setq custom-file (concat dotfiles-dir "custorg.el"))
-(load custom-file 'noerror)
+(defun three-quarters-windows ()
+  "Resizes the current window big; via sigusr2.net"
+  (interactive)
+  (let ((size (- (truncate (* 0.75 (frame-height))) (window-height))))
+    (if (> size 0)
+        (enlarge-window size))
+    )
+  )
+
 
