@@ -7,7 +7,7 @@
                     (or (buffer-file-name) load-file-name)))
 ;;(setq utils-file (concat dotfiles-dir "utils.el"))
 (setq custom-file (concat dotfiles-dir "custom.el"))
-(setq custom-file (concat dotfiles-dir "keymaps.el"))
+(setq keymaps-file (concat dotfiles-dir "keymaps.el"))
 
 
 ;; load utility functions

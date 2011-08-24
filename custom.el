@@ -1,4 +1,3 @@
-;; use cl
 (require 'cl)
 ;; setup some variables.
 (defvar homedir (concat (getenv "HOME") "/"))
@@ -13,18 +12,13 @@
       (progn (add-to-list 'load-path path)
              (require name))))
 
-;; highlight current line. Uses highline package.
-;; XXX: fix highlight colour before using this.
-;;(highline-mode-on)
-
-
 ;; Line truncation. See http://bit.ly/bzFM05
 ;;(setq truncate-lines t)
 
 ;; Colour theme
 (require 'color-theme)
-;;(color-theme-zenburn)
-;;(require 'color-theme)
+(require 'zenburn)
+(zenburn)
 ;;(require 'color-theme-solarized)
 ;;(color-theme-solarized-light)
 
@@ -34,6 +28,13 @@
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 (add-hook 'lua-mode-hook 'turn-on-font-lock)
 (add-hook 'lua-mode-hook 'hs-minor-mode)
+
+;; actionscript-mode. see actionscript-mode.el
+(load (concat dotfiles-dir "actionscript-mode.el"))
+(setq auto-mode-alist (cons '("\\.as$" . actionscript-mode) auto-mode-alist))
+(add-hook 'actionscript-mode-hook 'turn-on-font-lock)
+(add-hook 'actionscript-mode-hook 'hs-minor-mode)
+
 
 ;; org-mode. see custorg.el
 (setq custom-file (concat dotfiles-dir "custorg.el"))

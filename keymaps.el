@@ -28,3 +28,6 @@
 (global-set-key "\C-c=t" 'global-whitespace-toggle-options)
 (global-set-key "\C-cwc" 'whitespace-cleanup)
 (global-set-key "\C-x7" 'three-quarters-windows)
+
+(global-set-key "\C-ccb" 'clean-buffer-list)
+
