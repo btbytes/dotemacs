@@ -8,6 +8,7 @@
 ;;(setq utils-file (concat dotfiles-dir "utils.el"))
 (setq custom-file (concat dotfiles-dir "custom.el"))
 (setq keymaps-file (concat dotfiles-dir "keymaps.el"))
+(setq utils-file (concat dotfiles-dir "utils.el"))
 
 
 ;; load utility functions
@@ -20,5 +21,6 @@
 
 ;; load custom file
 (load custom-file 'noerror)
+(load utils-file 'noerror)
 (load keymaps-file 'noerror) ;; always load at the end.
 
