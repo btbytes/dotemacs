@@ -25,7 +25,7 @@
 ;; plain text editing.
 (add-hook 'text-mode-hook
           (lambda ()
-            (define-key text-mode-map (kbd "\C-ccw" 'word-count)))
+            (define-key text-mode-map (kbd "\C-ccw" 'word-count))))
 
 ;; whitespace mode
 (global-set-key "\C-c_w" 'whitespace-mode)

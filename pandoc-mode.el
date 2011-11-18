@@ -894,5 +894,4 @@ set. Without any prefix argument, the option is toggled."
 (easy-menu-add pandoc-mode-menu pandoc-mode-map)
 
 (provide 'pandoc-mode)
-
 ;;; pandoc-mode ends here
