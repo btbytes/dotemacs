@@ -19,6 +19,25 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-eshell
+                                  starter-kit-bindings scpaste
+                                  markdown-mode tuareg slime
+                                  color-theme color-theme-solarized
+                                  marmalade))
+(add-to-list 'load-path  (concat homedir "elisp/slime"))
+(setq slime-lisp-implementations
+      '((sbcl ("/usr/local/bin/sbcl") :coding-system utf-8-unix)
+        (abcl (concat homedir "abcl" "abcl") :coding-system utf-8-unix)
+        ))
+(require 'slime)
+(slime-setup '(slime-repl slime-asdf slime-fancy slime-banner)) 
+
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+        (package-install p)))
 ;; load custom file
 (load custom-file 'noerror)
 (load utils-file 'noerror)

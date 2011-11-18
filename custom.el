@@ -15,14 +15,6 @@
 ;; Line truncation. See http://bit.ly/bzFM05
 ;;(setq truncate-lines t)
 
-;; Colour theme
-;;(require 'color-theme)
-;;(require 'zenburn)
-;;(zenburn)
-;;(require 'color-theme-solarized)
-;;(color-theme-solarized-light)
-;;(color-theme-solarized-dark)
-
 ;; lua-mode. see lua-mode.el
 (load (concat dotfiles-dir "lua-mode.el"))
 (setq auto-mode-alist (cons'("\\.lua$" . lua-mode) auto-mode-alist))
@@ -42,7 +34,7 @@
 
 ;; pandoc mode
 (load (concat dotfiles-dir "pandoc-mode.el"))
-;;(require 'pandoc-mode)
+(require 'pandoc-mode)
 (add-hook 'markdown-mode-hook 'turn-on-pandoc)
 (autoload 'pandoc-mode "pandoc-mode" "Pandoc Mode." t)
 (add-to-list 'auto-mode-alist '("\\.txt\\'" . markdown-mode))
