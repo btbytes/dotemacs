@@ -25,9 +25,14 @@
 (defvar my-packages '(starter-kit starter-kit-lisp starter-kit-eshell
                                   starter-kit-bindings scpaste
                                   markdown-mode tuareg slime
+                                  org parenface pastebin pep8
+                                  pony-mode pyflakes pylint pymacs
+                                  pysmell pytest python python-mode python-pep8
+                                  python-pylint auctex
                                   color-theme color-theme-solarized
-                                  printing
+                                  printing company gist dpaste gnuplot
                                   marmalade))
+
 (add-to-list 'load-path  (concat homedir "elisp/slime"))
 (setq slime-lisp-implementations
       '((sbcl ("/usr/local/bin/sbcl") :coding-system utf-8-unix)
@@ -43,4 +48,5 @@
 (load custom-file 'noerror)
 (load utils-file 'noerror)
 (load keymaps-file 'noerror) ;; always load at the end.
+
 
