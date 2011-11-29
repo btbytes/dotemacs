@@ -8,11 +8,11 @@
 
 
 
-;; Make
-;; (global-set-key "C-c 9" 'compile)
+;; ;; Make
+ (global-set-key "\C-c9" 'compile)
 
-;; magit
-;; magit-status C-c ms
+;; ;; magit
+;; ;; magit-status C-c ms
 (global-set-key (kbd "C-c ms") 'magit-status)
 
 ;; This hook is activated only when the magit-mode is active.
@@ -27,6 +27,7 @@
           (lambda ()
             (define-key text-mode-map (kbd "\C-ccw" 'word-count))))
 
+
 ;; whitespace mode
 (global-set-key "\C-c_w" 'whitespace-mode)
 (global-set-key "\C-c_t" 'whitespace-toggle-options)
@@ -35,6 +36,6 @@
 (global-set-key "\C-cwc" 'whitespace-cleanup)
 (global-set-key "\C-x7" 'three-quarters-windows)
 
-;; buffers
+;; ;; ;; buffers
 (global-set-key "\C-ccb" 'clean-buffer-list)
 

@@ -15,7 +15,6 @@
 ;; Line truncation. See http://bit.ly/bzFM05
 ;;(setq truncate-lines t)
 
-
 ;; lua-mode. see lua-mode.el
 (load (concat dotfiles-dir "lua-mode.el"))
 (setq auto-mode-alist (cons'("\\.lua$" . lua-mode) auto-mode-alist))
@@ -29,11 +28,18 @@
 (add-hook 'actionscript-mode-hook 'turn-on-font-lock)
 (add-hook 'actionscript-mode-hook 'hs-minor-mode)
 
+;; mercurial
+(load (concat dotfiles-dir "mercurial.el"))
+(require 'mercurial)
+
 ;; pandoc mode
 (load (concat dotfiles-dir "pandoc-mode.el"))
 (require 'pandoc-mode)
 (add-hook 'markdown-mode-hook 'turn-on-pandoc)
 (autoload 'pandoc-mode "pandoc-mode" "Pandoc Mode." t)
+(add-to-list 'auto-mode-alist '("\\.txt\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.mkd\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.page\\'" . markdown-mode))
 
 ;; org-mode. see custorg.el
