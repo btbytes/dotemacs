@@ -1,10 +1,13 @@
 ;; serenity.enth.local specific customisations.
 
+(setq dotfiles-dir (file-name-directory
+                    (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path "/usr/share/common-lisp/source/slime/")
 (setq inferior-lisp-program "/usr/bin/sbcl")
 (require 'slime)
 (slime-setup)
 
+(load (concat dotfiles-dir "myprint.el"))
 ;;(load "auctex.el" nil t t )
 ;;(load "preview-latex.el" nil t t)
 

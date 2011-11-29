@@ -26,6 +26,7 @@
                                   starter-kit-bindings scpaste
                                   markdown-mode tuareg slime
                                   color-theme color-theme-solarized
+                                  printing
                                   marmalade))
 (add-to-list 'load-path  (concat homedir "elisp/slime"))
 (setq slime-lisp-implementations
