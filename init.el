@@ -31,6 +31,7 @@
                                   python-pylint auctex
                                   color-theme color-theme-solarized
                                   printing company gist dpaste gnuplot
+                                  yasnippet-bundle
                                   marmalade))
 
 (add-to-list 'load-path  (concat homedir "elisp/slime"))
