@@ -30,8 +30,9 @@
                                   pysmell pytest python python-mode python-pep8
                                   python-pylint auctex
                                   color-theme color-theme-solarized
-                                  printing company gist dpaste gnuplot
+                                  printing company gnuplot
                                   yasnippet-bundle
+                                  gist dpaste scpaste
                                   marmalade))
 
 (add-to-list 'load-path  (concat homedir "elisp/slime"))

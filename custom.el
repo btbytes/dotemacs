@@ -84,4 +84,5 @@
     )
   )
 
-
+(autoload 'scpaste "scpaste" "Paste the current buffer." t nil)
+(setq scpaste-http-destination "http://btbytes.com/paste" scpaste-scp-destination "btbytes.com:web/btbytes.com/www/paste")
