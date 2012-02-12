@@ -4,12 +4,7 @@
 (global-set-key [(shift insert)] 'clipboard-yank)
 
 ;;Comment or Uncomment C-c #
-(global-set-key "\C-c#"  'comment-or-uncomment-region)
-
-
-
-;; ;; Make
- (global-set-key "\C-c9" 'compile)
+(global-set-key (kbd  "\C-c#")  'comment-or-uncomment-region)
 
 ;; ;; magit
 ;; ;; magit-status C-c ms
@@ -39,3 +34,5 @@
 ;; ;; ;; buffers
 (global-set-key "\C-ccb" 'clean-buffer-list)
 
+;; make
+(global-set-key (kbd "<f9>") 'compile)
