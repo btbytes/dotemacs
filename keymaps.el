@@ -1,3 +1,6 @@
+(defalias 'wq 'save-buffers-kill-emacs)
+(global-set-key (kbd "s-<return>") 'ns-toggle-fullscreen)
+
 ;; clipboard integration
 (global-set-key [(shift delete)] 'clipboard-kill-region)
 (global-set-key [(control insert)] 'clipboard-kill-ring-save)
